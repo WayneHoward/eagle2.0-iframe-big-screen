@@ -148,8 +148,6 @@ export default {
 
         this.formData.companyId = '3c574203fa3b4500a931ecab9df4fefd'
 
-        this.formData.dataTime = '2022-03-30'
-
         this.loadData()
       })
     },
