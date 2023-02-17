@@ -1,0 +1,141 @@
+#app {
+    height: 100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.transition {
+    height: 100%;
+    /*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
+    -webkit-transform-style: preserve-3d;
+    /*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
+    -webkit-backface-visibility: hidden;
+    /*开启硬件加速*/
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    >div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .content {
+            max-height: calc(100% - 35px);
+            .van-form {
+                max-height: calc(100% - 50px);
+                overflow: auto;
+                flex: 1
+            }
+            .submit-btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+.no-data {
+    margin: 50px auto 0;
+}
+.highlight {
+    color:$theme-color;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.content li {
+    letter-spacing: 1px;
+}
+.title {
+  letter-spacing: 2px;
+}
+.van-cell__title {
+  letter-spacing: 2px;
+}
+.van-button__text {
+  letter-spacing: 20px;
+  padding-left: 20px;
+}
+.van-cell--required::before {
+  left: 4px;
+}
+.van-form {
+  @include box-shadow(0, 8px, 12px, 0, #ebedf0);
+}
+.van-sticky {
+    position: fixed;
+    width: 100%;
+}
+.page-header-wrapper {
+  height: 100%;
+  .page-header {
+    height: 50px;
+    width: 100%;
+    padding: 0px 18px 0px 18px;
+    background-color: $theme-color;
+    @include box-shadow(0, 4px, 12px, 0, #a4a4a4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .back-arrow {
+      width: 30px;
+      height: 14px;
+      img {
+        height: 14px;
+      }
+    }
+    .title {
+      color: #ffffff;
+    }
+    .blank {
+      height: 22px !important;
+      width: 20px !important;
+      img {
+        height: 22px;
+      }
+    }
+  }
+}
+.page-content {
+  height: 100%;
+  width: 100%;
+  padding: 68px 18px 0px 18px;
+  .van-form {
+    border-radius: 10px;
+    @include box-shadow(0, 8px, 12px, 0, #a4a4a4);
+  }
+  .form-wrapper {
+    .van-cell:nth-child(1) {
+      border-radius: 10px 10px 0px 0px;
+    }
+    .van-cell:nth-last-child(1) {
+      border-radius: 0px 0px 10px 10px;
+    }
+  }
+  .submit-btn {
+    margin-top: 18px;
+  }
+  .van-button--round {
+    border-radius: 10px;
+    @include box-shadow(0, 8px, 12px, 0, #a4a4a4);
+  }
+  //.van-cell--required::before {
+  //  left: 0.08rem;
+  //}
+}
+.van-pull-refresh {
+    position: absolute;
+    top : 100px!important;
+    height: calc(100% - 100px);
+    width: 100%;
+}
+
+.van-pull-refresh__track {
+    height: 100%;
+}
+.info-list-search {
+  .page-content {
+    .van-cell__value--alone {
+      background-color: #e9e9e9 !important;
+      border-radius: 5px !important;
+      padding-left: 10px;
+    }
+  }
+}

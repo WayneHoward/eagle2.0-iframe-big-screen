@@ -1,0 +1,34 @@
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+    will-change: transform;
+    transition: all 500ms;
+    position: absolute;
+    width: 100%;
+}
+.slide-right-enter {
+    left: 200%;
+    transform: translate3d(-100%, 0, 0);
+}
+.slide-right-enter-to{
+    left: 0;
+}
+.slide-right-leave {
+    left: 0;
+}
+.slide-right-leave-to{
+    left: -100%;
+}
+.slide-left-enter {
+    left: -100%;
+}
+.slide-left-enter-to{
+    left: 0;
+}
+.slide-left-leave{
+    left:0
+}
+.slide-left-leave-to {
+    left: 200%;
+}

@@ -1,0 +1,16 @@
+import Vue from 'vue'
+import VueSocketIO from 'vue-socket.io'
+import SocketIo from 'socket.io-client'
+
+export const vueSocketIo = new VueSocketIO({
+  // 是否为开发环境
+  debug: false,
+
+  // socket.io 连接配置
+  connection: SocketIo('/', {
+    autoConnect: false,
+    transports: ['websocket', 'polling']
+  })
+})
+
+Vue.use(vueSocketIo)

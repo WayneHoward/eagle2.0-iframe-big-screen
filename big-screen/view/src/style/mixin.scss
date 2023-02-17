@@ -1,0 +1,43 @@
+/** CSS 混入样式*/
+
+// 盒子阴影
+@mixin box-shadow($x: 3px, $y: 3px, $blur: 4px, $spread: 0, $shadowcolor: #cccccc) {
+    -moz-box-shadow: $x $y $blur $spread $shadowcolor; // FF3.5+
+    -webkit-box-shadow: $x $y $blur $spread $shadowcolor; // Saf3.0+, Chrome
+    box-shadow: $x $y $blur $spread $shadowcolor; // Opera 10.5, IE 9.0
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$shadowcolor}');
+    /* IE6,IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$shadowcolor}')";
+    /* IE8 */
+}
+
+// 线性渐变
+@mixin linear-gradient($linear-gradient) {
+    background-image: $linear-gradient;
+}
+
+// 背景
+@mixin bg-contain($name) {
+    background: url($img-base-path + $name) no-repeat center;
+    background-size: contain;
+}
+
+@mixin bg-full($name) {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    background-image: url($img-base-path + $name);
+}
+
+@mixin bg-cover($name) {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url($img-base-path + $name);
+}
+
+@mixin bg-center($name) {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url($img-base-path + $name);
+}

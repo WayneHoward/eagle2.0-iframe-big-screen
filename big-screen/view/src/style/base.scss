@@ -1,0 +1,310 @@
+/** CSS 基础样式*/
+
+* {
+    font-weight: inherit;
+    font-family: $font-sans;
+    font-size: $font-size;
+    font-style: inherit;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 20px;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(230, 233, 236);
+    //-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    // font-size: 16px!important;
+    overflow: -moz-scrollbars-none;
+    color: #515a6e;
+    cursor: default;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
+form, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0)}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+fieldset {
+    border: 1px solid;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+dfn {
+    font-style: italic;
+}
+
+del, ins {
+    text-decoration: none;
+}
+
+ul>li {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+    vertical-align: baseline;
+}
+
+legend {
+    color: #000;
+    border: 0;
+}
+
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+
+textarea {
+    overflow: auto;
+}
+
+optgroup {
+    font-weight: bold;
+}
+select::-ms-expand {
+    display: none;
+}
+
+input {
+    line-height: normal;
+}
+input[type=number]::-webkit-textfield-decoration-container {
+    background-color: transparent;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+input[type=text]::-ms-clear,input[type=tel]::-ms-clear,input[type=number]::-ms-clear{
+    display: none;
+}
+input::-webkit-input-placeholder{color:#AAAAAA;}
+input:focus::-webkit-input-placeholder{color:#EEEEEE;}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+a {
+    color: #62b5aa;
+    text-decoration: none;
+}
+a img, :link img, :visited img {
+    border: none;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+small {
+    font-size: 80%;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+pre {
+    overflow: auto;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+[hidden], template {
+    display: none;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+/*用于在父容器直接清除子元素浮动。*/
+*html .clearfix {
+    height: 1%;
+}
+
+/*只在IE6中生效*/
+.Clearfix {
+    display: block;
+}
+
+
+/*vue*/
+[v-cloak] {
+    display: none;
+    /*防止还没有数据时出现代码括号*/
+}
+
+// H5 页面混动条样式
+
+::-webkit-scrollbar{
+    /*垂直滚动条的宽*/
+    width: 5px;
+    height: 16px;
+}
+::-webkit-scrollbar-track-piece{
+    /*修改滚动条的背景和圆角*/
+    background: rgb(230, 233, 236);
+    -webkit-border-radius: 6px;
+}
+/*修改垂直滚动条的样式*/
+::-webkit-scrollbar-thumb:vertical{
+    background-color: #ddd;
+    -webkit-border-radius: 6px;
+}
+
+/*修改水平滚动条的样式*/
+::-webkit-scrollbar-thumb:horizontal{
+    background-color: #faa;
+    -webkit-border-radius: 6px;
+}
