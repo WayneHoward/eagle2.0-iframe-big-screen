@@ -148,6 +148,16 @@ export default {
 
         this.formData.companyId = '3c574203fa3b4500a931ecab9df4fefd'
 
+        let cookieArr = document.cookie.split('; ')
+
+        if (cookieArr.length > 0) {
+          cookieArr.forEach(item => {
+            if (item.split('=')[0] == 'dataTime') {
+              this.formData.dataTime = item.split('=')[1]
+            }
+          })
+        }
+
         this.loadData()
       })
     },
@@ -190,6 +200,8 @@ export default {
   watch: {
     'formData.dataTime': {
       handler(val) {
+        document.cookie=`dataTime=${val}`;
+
         this.loadData()
       },
       deep: true
