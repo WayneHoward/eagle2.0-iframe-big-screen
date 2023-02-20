@@ -146,7 +146,7 @@ export function getBar1 () {
 // 纯折线图
 export function getLine1 () {
   const option = { // 配置图表信息
-    color: ['#ff0c1c', '#ffb75b'],
+    color: ['#13afa0', '#ff9e32'],
     backgroundColor: '#fff',
     tooltip: {
       trigger: 'axis',
@@ -156,7 +156,7 @@ export function getLine1 () {
       formatter: function (params) {
         let returnData = '<div style="padding: 2px 10px;">'
         returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;">线损率区间：' + params[0].axisValue + '</span><br/>'
-        for (let i = 0; i < params.length; i++) {
+        for (let i = 0; i < 2; i++) {
             returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
             returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">%</span><br/>'
         }
@@ -259,15 +259,72 @@ export function getLine1 () {
       {
         name: '优化前电压合格率',
         type: 'line',
+        areaStyle: {
+          opacity: 1,
+          color: {
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            type: 'linear',
+            global: false,
+            colorStops: [
+              {
+                  offset: 0,
+                  color: `rgba(0, 165, 149, .1)`
+              },
+              {
+                  offset: 0.8,
+                  color: 'rgba(0, 0, 0, 0)'
+              },
+            ]
+          },
+          shadowColor: 'rgba(0, 0, 0, 0)',
+          shadowBlur: 10
+        },
         // data: [20, 40, 30]
         data: this.before
       },
       {
         name: '优化后电压合格率',
         type: 'line',
+        areaStyle: {
+          opacity: 1,
+          color: {
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            type: 'linear',
+            global: false,
+            colorStops: [
+              {
+                  offset: 0,
+                  color: `rgba(242, 161, 75, .1)`
+              },
+              {
+                  offset: 0.8,
+                  color: 'rgba(0, 0, 0, 0)'
+              }
+            ]
+          },
+          shadowColor: 'rgba(0, 0, 0, 0)',
+          shadowBlur: 10
+        },
         // data: [50, 55, 70]
         data: this.after
-      }
+      },
+      {
+        type: 'bar',
+        barWidth: '20%',
+        barGap: '-100%',
+        data: [100, 100, 100],
+        itemStyle: {
+          normal: {
+            color: 'rgba(0, 165, 149, .1)',
+          }
+        },
+      },
     ]
   }
   return option
@@ -279,7 +336,7 @@ export function getDoubleBar(leftData, rightData, company) {
   let legend = company
   let option = {
     // backgroundColor: '#0a142f',
-    color: ['#ff9136', '#00a5e3'],
+    color: ['#ff9136', '#13afa0'],
     tooltip: {
       trigger: 'axis',
       axisPointer: { // 坐标轴指示器，坐标轴触发有效
@@ -319,11 +376,11 @@ export function getDoubleBar(leftData, rightData, company) {
     grid: [
       {
         show: false,
-        left: '18%',
+        left: '10%',
         top: '15%',
         bottom: '11%',
         containLabel: true,
-        width: '26%',
+        width: '34%',
       },
       {
         show: false,
@@ -334,11 +391,11 @@ export function getDoubleBar(leftData, rightData, company) {
       },
       {
         show: false,
-        right: '18%',
+        right: '10%',
         top: '15%',
         bottom: '11%',
         containLabel: true,
-        width: '26%',
+        width: '34%',
       },
     ],
     xAxis: [
@@ -465,6 +522,11 @@ export function getDoubleBar(leftData, rightData, company) {
         //   },
         // },
         data: leftData,
+        // data: [241, 100, 23],
+        showBackground: true,
+        backgroundStyle: {
+          color: 'rgba(242, 161, 75, .1)'
+        },
         animationEasing: 'elasticOut',
       },
       {
@@ -489,8 +551,13 @@ export function getDoubleBar(leftData, rightData, company) {
         //   },
         // },
         data: rightData,
+        // data: [255, 23, 145],
+        showBackground: true,
+        backgroundStyle: {
+          color: 'rgba(0, 165, 149, .1)'
+        },
         animationEasing: 'elasticOut',
-      },
+      }
     ],
   };
   return option

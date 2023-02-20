@@ -4,6 +4,9 @@
     <div class="ul-wrapper">
       <ul class="block">
         <li>
+          <div class="icon">
+            <img src="../assets/09.png" alt="">
+          </div>
           <div class="name">优化设备</div>
           <div class="data">
             <div class="number">{{RPOPSRNUM}}</div>
@@ -11,6 +14,9 @@
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/10.png" alt="">
+          </div>
           <div class="name">年节电量</div>
           <div class="data">
             <div class="number">{{YEARTOTALSAVED}}</div>
@@ -18,6 +24,9 @@
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/011.png" alt="">
+          </div>
           <div class="name">CO2减排量</div>
           <div class="data">
             <div class="number">{{CO2REDUCTION}}</div>
@@ -69,6 +78,7 @@ export default {
   align-items: center;
 }
 .block {
+  height: 100%;
   flex: 1;
   overflow: hidden;
   margin: 10px 5px;
@@ -77,18 +87,26 @@ export default {
   // background-color: #f8fafa;
   border-radius: 10px;
   li {
+    height: 100%;
     width: 33%;
-    padding: 10px 0px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
     white-space: nowrap;
+    .icon {
+      img {
+        height: 20px;
+      }
+      margin-bottom: 5px;
+      box-sizing: border-box;
+    }
     .name {
       color: #74798C;
       font-size: 12px;
       margin-bottom: 5px;
+      box-sizing: border-box;
     }
     .data {
       color: #282D30;

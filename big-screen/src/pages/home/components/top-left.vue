@@ -19,6 +19,9 @@
     <div class="ul-wrapper">
       <ul class="block">
         <li>
+          <div class="icon">
+            <img src="../assets/01.png" alt="">
+          </div>
           <div class="name">变电站数量</div>
           <div class="data">
             <div class="number" v-if="tabValue == ''">{{SUBSNUMAll}}</div>
@@ -29,6 +32,9 @@
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/02.png" alt="">
+          </div>
           <div class="name">主变数量</div>
           <div class="data">
             <div class="number" v-if="tabValue == ''">{{TRANNUMAll}}</div>
@@ -39,6 +45,9 @@
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/03.png" alt="">
+          </div>
           <div class="name">主变容量</div>
           <div class="data">
             <div class="number" v-if="tabValue == ''">{{TRANCAPAll}}</div>
@@ -49,6 +58,9 @@
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/04.png" alt="">
+          </div>
           <div class="name">线路条数</div>
           <div class="data">
             <div class="number" v-if="tabValue == ''">{{LINENUMAll}}</div>
@@ -59,6 +71,9 @@
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/05.png" alt="">
+          </div>
           <div class="name">线路长度</div>
           <div class="data">
             <div class="number" v-if="tabValue == ''">{{LINELENGTHAll}}</div>
@@ -236,6 +251,7 @@ export default {
   align-items: center;
 }
 .block {
+  height: 100%;
   flex: 1;
   overflow: hidden;
   margin: 0px 5px;
@@ -244,19 +260,27 @@ export default {
   align-items: center;
   border-radius: 10px;
   li {
+    height: 100%;
     // background-color: #f8fafa;
     width: 20%;
-    padding: 10px 0px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
     white-space: nowrap;
+    .icon {
+      img {
+        height: 20px;
+      }
+      margin-bottom: 5px;
+      box-sizing: border-box;
+    }
     .name {
       color: #74798C;
       font-size: 12px;
       margin-bottom: 5px;
+      box-sizing: border-box;
     }
     .data {
       color: #282D30;

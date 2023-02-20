@@ -281,7 +281,7 @@ export function getBar2 () {
 // 折线柱状图
 export function getLineBar1 () {
   const option = { // 配置图表信息
-    color: ['#ff9e32', '#13afa0', '#ff2e5d', '#3068d6'],
+    color: ['#ff9e32', '#13afa0', '#ff9e32', '#13afa0'],
     backgroundColor: '#fff',
     tooltip: {
       trigger: 'axis',
@@ -467,7 +467,7 @@ export function getLineBar1 () {
 // 折线柱状图
 export function getLineBar2 () {
   const option = { // 配置图表信息
-    color: ['#009dea', '#ff0c1c', '#73b42a'],
+    color: ['#13afa0', '#13afa0', '#ff9e32'],
     backgroundColor: '#fff',
     tooltip: {
       trigger: 'axis',

@@ -4,22 +4,40 @@
     <div class="ul-wrapper">
       <ul class="block">
         <li>
+          <div class="icon">
+            <img src="../assets/06.png" alt="">
+          </div>
           <div class="name">供电量</div>
           <div class="data">
+            <div class="dock">
+              <img src="../assets/dock.png" alt="dock.png">
+            </div>
             <div class="number">{{ACTIVEPOWERBEFORE}}</div>
             <div class="company">万kWh</div>
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/07.png" alt="">
+          </div>
           <div class="name">总损耗</div>
           <div class="data">
+            <div class="dock">
+              <img src="../assets/dock.png" alt="dock.png">
+            </div>
             <div class="number">{{TOTALLOSSBEFORE}}</div>
             <div class="company">万kWh</div>
           </div>
         </li>
         <li>
+          <div class="icon">
+            <img src="../assets/08.png" alt="">
+          </div>
           <div class="name">线损率</div>
           <div class="data">
+            <div class="dock">
+              <img src="../assets/dock.png" alt="dock.png">
+            </div>
             <div class="number">{{TOTALLOSSRATEBEFORE}}</div>
             <div class="company">%</div>
           </div>
@@ -69,6 +87,7 @@ export default {
   align-items: center;
 }
 .block {
+  height: 100%;
   flex: 1;
   overflow: hidden;
   margin: 10px 5px;
@@ -77,23 +96,46 @@ export default {
   // background-color: #f8fafa;
   border-radius: 10px;
   li {
+    height: 100%;
     width: 33%;
-    padding: 10px 0px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
     white-space: nowrap;
+    // background-image: url('../assets/dock.png');
+    // background-repeat: no-repeat;
+    // background-size: 50%;
+    // background-position: 50% 90%;
+    .icon {
+      img {
+        height: 20px;
+      }
+      margin-bottom: 5px;
+      box-sizing: border-box;
+    }
     .name {
       color: #74798C;
       font-size: 12px;
       margin-bottom: 5px;
+      box-sizing: border-box;
     }
     .data {
       color: #282D30;
       display: flex;
       align-items: flex-end;
+      position: relative;
+      line-height: 16px;
+      .dock {
+        img {
+          height: 35px;
+        }
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+      }
       .number {
         font-size: 16px;
       }
