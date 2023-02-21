@@ -49,7 +49,7 @@ export default {
         data.forEach(item => {
           if (item.DATA_TIME) {
             this.dateTimeList.push(item.DATA_TIME)
-            this.ACTIVE_POWER.push(item['ROUND(C.ACTIVE_POWER,2)'])
+            this.ACTIVE_POWER.push(item['ACTIVE_POWER'])
             this.TOTAL_LOSS_RATE_BEFORE.push(item.TOTAL_LOSS_RATE_BEFORE)
             this.TOTAL_LOSS_RATE.push(item.TOTAL_LOSS_RATE)
           }
