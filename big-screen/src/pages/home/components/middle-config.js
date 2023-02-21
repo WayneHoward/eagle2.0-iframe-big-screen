@@ -23,7 +23,7 @@ export function getBar1 () {
       left: '6%',
       right: '2%',
       bottom: '5%',
-      top: '15%',
+      top: '17%',
       containLabel: true
     },
     legend: {
@@ -168,7 +168,7 @@ export function getBar2 () {
       left: '6%',
       right: '2%',
       bottom: '5%',
-      top: '15%',
+      top: '17%',
       containLabel: true
     },
     legend: {
@@ -303,7 +303,7 @@ export function getLineBar1 () {
       left: '6%',
       right: '6%',
       bottom: '5%',
-      top: '15%',
+      top: '17%',
       containLabel: true
     },
     legend: {
@@ -489,7 +489,7 @@ export function getLineBar2 () {
       left: '6%',
       right: '6%',
       bottom: '5%',
-      top: '15%',
+      top: '17%',
       containLabel: true
     },
     legend: {

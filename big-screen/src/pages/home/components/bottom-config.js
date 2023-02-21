@@ -33,11 +33,11 @@ export function getBar1 () {
       left: '6%',
       right: '2%',
       bottom: '5%',
-      top: '15%',
+      top: '17%',
       containLabel: true
     },
     legend: {
-      data: ['优化前电压合格率', '优化后电压合格率'],
+      data: ['优化前数量', '优化后数量'],
       right: '2%',
       // top: 20,
       textStyle: {
@@ -125,14 +125,14 @@ export function getBar1 () {
     ],
     series: [
       {
-        name: '优化前电压合格率',
+        name: '优化前数量',
         type: 'bar',
         barWidth: '10%',
         // data: [70, 50, 30, 60]
         data: this.before
       },
       {
-        name: '优化后电压合格率',
+        name: '优化后数量',
         type: 'bar',
         barWidth: '10%',
         // data: [60, 40, 70, 50]
@@ -168,7 +168,7 @@ export function getLine1 () {
       left: '6%',
       right: '2%',
       bottom: '5%',
-      top: '15%',
+      top: '17%',
       containLabel: true
     },
     legend: {

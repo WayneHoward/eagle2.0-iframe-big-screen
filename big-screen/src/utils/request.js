@@ -18,7 +18,7 @@ const service = new axios.create({
   }
 })
 
-window.document.cookie = 'JSESSIONID=820464F518560C1B18BB7F5E9D8DAB2A; sessionAge=1800'
+window.document.cookie = 'JSESSIONID=9C94BC4E88E7A1D44A6032E928595773; sessionAge=1800'
 
 // 2 处理请求拦截
 service.interceptors.request.use(

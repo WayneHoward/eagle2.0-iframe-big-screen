@@ -62,7 +62,7 @@ export default {
       return getDoubleBar.call(this, this.tab2LeftData, this.tab2RightData, ['优化前无功输出(MVar)', '优化后无功输出(MVar)'])
     },
     tab3DoubleBar () {
-      return getDoubleBar.call(this, this.tab3LeftData, this.tab3RightData, ['优化前容量(MVar)', '优化后容量(MVar)'])
+      return getDoubleBar.call(this, this.tab3LeftData, this.tab3RightData, ['优化前无功输出(MVar)', '优化后无功输出(MVar)'])
     }
   },
   data() {
