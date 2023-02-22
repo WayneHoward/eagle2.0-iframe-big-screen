@@ -42,7 +42,7 @@ import { dfCharts } from 'dfview'
 import { getBar1, getBar2 } from './middle-config'
 
 export default {
-  name: 'TopLeft',
+  name: 'MiddleLeft',
   components: {
     dfCharts
   },

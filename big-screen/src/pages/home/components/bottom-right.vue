@@ -2,7 +2,7 @@
   <div class="content">
     <div class="title">
       <img src="../assets/title-icon.png" alt="title-icon">
-      <div class="title-name">
+      <div class="title-name" @click="showInTab">
         无功补偿装置容量对比
       </div>
       <ul class="tabs">
@@ -50,7 +50,13 @@ import { dfCharts } from 'dfview'
 import { getDoubleBar } from './bottom-config'
 
 export default {
-  name: 'TopLeft',
+  name: 'BottomRight',
+  props: {
+    formData: {
+      type: Object,
+      default: () => {}
+    }
+  },
   components: {
     dfCharts
   },
@@ -192,6 +198,20 @@ export default {
 
     tabClick(value) {
       this.tabValue = value
+    },
+
+    showInTab() {
+      let COMPANY_ID = this.formData.companyId
+      let DATA_TIME = this.formData.dataTime
+
+      let param = {
+        tabId: '4028801b5d52bb79015d54e49d2202b2',
+        tabName: '无功优化策略结果表',
+        url: `eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d53022d015d54a6833e0070&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME}&END_DATA_TIME=${DATA_TIME}`,
+        isRefresh: true
+      }
+
+      top.showInTab(param.tabId, param.tabName, param.url, param.isRefresh)
     }
   }
 };
@@ -213,6 +233,7 @@ export default {
       height: 16px;
     }
     .title-name {
+      cursor: pointer;
       color: #20253A;
       font-size: 14px;
       margin-left: 5px;

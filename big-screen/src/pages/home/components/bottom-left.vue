@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="线路运行情况对比"></Title>
+    <Title titleName="线路运行情况对比" ref="title" :params="params"></Title>
     <div class="echarts">
       <df-charts
         ref="bar"
@@ -19,7 +19,13 @@ import { dfCharts } from 'dfview'
 import { getBar1 } from './bottom-config'
 
 export default {
-  name: 'TopLeft',
+  name: 'BottomLeft',
+  props: {
+    formData: {
+      type: Object,
+      default: () => {}
+    }
+  },
   components: {
     Title,
     dfCharts
@@ -32,7 +38,16 @@ export default {
   data() {
     return {
       before: [],
-      after: []
+      after: [],
+
+      params: {
+        hour: true,
+        formData: this.formData,
+        tabId: '4028801b5d52bb79015d54766623018d',
+        tabName: '输电线路结果对比表（整点）',
+        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d0cacfe015d0d98e573001d',
+        isRefresh: true
+      }
     };
   },
   methods: {

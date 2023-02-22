@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="输电网优化措施"></Title>
+    <Title titleName="输电网优化措施" ref="title" :params="params"></Title>
     <div class="ul-wrapper">
       <ul class="block">
         <li>
@@ -42,7 +42,13 @@
 import Title from './title'
 
 export default {
-  name: 'TopLeft',
+  name: 'TopRight',
+  props: {
+    formData: {
+      type: Object,
+      default: () => {}
+    }
+  },
   components: {
     Title
   },
@@ -52,7 +58,16 @@ export default {
 
       YEARTOTALSAVED: '0', // 年节电量
 
-      CO2REDUCTION: '0' // CO2减排量
+      CO2REDUCTION: '0', // CO2减排量
+
+      params: {
+        hour: false,
+        formData: this.formData,
+        tabId: '4028801b5d52bb79015d54e49d2202b2',
+        tabName: '无功优化策略结果表',
+        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d53022d015d54a6833e0070',
+        isRefresh: true
+      }
     };
   },
   methods: {

@@ -31,16 +31,19 @@
         <div class="topLeft">
           <TopLeft
             ref="topLeft"
+            :formData="formData"
           ></TopLeft>
         </div>
         <div class="topCenter">
           <TopCenter
             ref="topCenter"
+            :formData="formData"
           ></TopCenter>
         </div>
         <div class="topRight">
           <TopRight
             ref="topRight"
+            :formData="formData"
           ></TopRight>
         </div>
       </div>
@@ -48,16 +51,19 @@
         <div class="middleLeft">
           <MiddleLeft
             ref="middleLeft"
+            :formData="formData"
           ></MiddleLeft>
         </div>
         <div class="middleCenter">
           <MiddleCenter
             ref="middleCenter"
+            :formData="formData"
           ></MiddleCenter>
         </div>
         <div class="middleRight">
           <MiddleRight
             ref="middleRight"
+            :formData="formData"
           ></MiddleRight>
         </div>
       </div>
@@ -65,16 +71,19 @@
         <div class="bottomLeft">
           <BottomLeft
             ref="bottomLeft"
+            :formData="formData"
           ></BottomLeft>
         </div>
         <div class="bottomCenter">
           <BottomCenter
             ref="bottomCenter"
+            :formData="formData"
           ></BottomCenter>
         </div>
         <div class="bottomRight">
           <BottomRight
             ref="bottomRight"
+            :formData="formData"
           ></BottomRight>
         </div>
       </div>
@@ -141,12 +150,12 @@ export default {
       this.$nextTick(_ => {
         this.companyOptions = [
           {
-            value: '3c574203fa3b4500a931ecab9df4fefd',
-            label: '国网酒泉供电公司'
+            value: window.eagle2CompanyId,
+            label: window.eagle2CompanyName
           }
         ]
 
-        this.formData.companyId = '3c574203fa3b4500a931ecab9df4fefd'
+        this.formData.companyId = window.eagle2CompanyId
 
         let cookieArr = document.cookie.split('; ')
 

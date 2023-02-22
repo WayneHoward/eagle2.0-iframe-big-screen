@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="全网分压对比"></Title>
+    <Title titleName="全网分压对比" ref="title" :params="params"></Title>
     <div class="echarts">
       <df-charts
         ref="lineBar"
@@ -19,7 +19,13 @@ import { dfCharts } from 'dfview'
 import { getLineBar1 } from './middle-config'
 
 export default {
-  name: 'TopLeft',
+  name: 'MiddleCenter',
+  props: {
+    formData: {
+      type: Object,
+      default: () => {}
+    }
+  },
   components: {
     Title,
     dfCharts
@@ -35,7 +41,16 @@ export default {
       TOTALLOSSBEFORE: [], // 优化前损耗电量
       TOTALLOSS: [], // 优化后损耗电量
       TOTALLOSSRATEBEFORE: [], // 优化前线损率
-      TOTALLOSSRATE: [] // 优化后线损率
+      TOTALLOSSRATE: [], // 优化后线损率
+
+      params: {
+        hour: false,
+        formData: this.formData,
+        tabId: '4028b8815d5f0e1d015d5fc0180b000d',
+        tabName: '分压结果对比表',
+        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d5828d9015d58ba96a5001d',
+        isRefresh: true
+      }
     };
   },
 

@@ -13,9 +13,11 @@ module.exports = {
     index: {
       entry: 'src/pages/main.js',
       template: 'public/index.html',
-      filename: 'index.html'
+      filename: 'TranRpoPanoramicUI.ftl'
     }
   },
+  publicPath: '/eagle2/vue-dist/gansu-bigscreen/',
+  outputDir: 'vue-dist/gansu-bigscreen',
   lintOnSave: false,
   css: {
     loaderOptions: {

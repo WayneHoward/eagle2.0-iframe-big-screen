@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from '@/router'
-import store from '@/store'
+// import router from '@/router'
+// import store from '@/store'
 
 import '@/style/index.scss'
 // import '@/utils/rem'
@@ -35,7 +35,7 @@ Vue.use((Vue) => {
 
 new Vue({
   el: '#app',
-  router,
-  store,
+  // router,
+  // store,
   render: h => h(App)
 })

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="电压合格率对比"></Title>
+    <Title titleName="电压合格率对比" ref="title" :params="params"></Title>
     <div class="echarts">
       <df-charts
         ref="line"
@@ -19,7 +19,13 @@ import { dfCharts } from 'dfview'
 import { getLine1 } from './bottom-config'
 
 export default {
-  name: 'TopLeft',
+  name: 'BottomCenter',
+  props: {
+    formData: {
+      type: Object,
+      default: () => {}
+    }
+  },
   components: {
     Title,
     dfCharts
@@ -32,7 +38,16 @@ export default {
   data() {
     return {
       before: [],
-      after: []
+      after: [],
+
+      params: {
+        hour: true,
+        formData: this.formData,
+        tabId: '4028801b5d52bb79015d5477c51201d6',
+        tabName: '电压合格率结果对比表（整点）',
+        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d100f53015d11e73b85004c',
+        isRefresh: true
+      }
     };
   },
   methods: {

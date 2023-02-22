@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="输电网基本情况"></Title>
+    <Title titleName="输电网基本情况" ref="title" :params="params"></Title>
     <div class="ul-wrapper">
       <ul class="block">
         <li>
@@ -52,6 +52,12 @@ import Title from './title'
 
 export default {
   name: 'TopCenter',
+  props: {
+    formData: {
+      type: Object,
+      default: () => {}
+    }
+  },
   components: {
     Title
   },
@@ -61,7 +67,16 @@ export default {
 
       TOTALLOSSBEFORE: '0', // 总损耗
 
-      TOTALLOSSRATEBEFORE: '0' // 线损率
+      TOTALLOSSRATEBEFORE: '0', // 线损率
+
+      params: {
+        hour: false,
+        formData: this.formData,
+        tabId: '4028b8815d5f0e1d015d5fbebd790005',
+        tabName: '全网总损耗结果对比表（日）',
+        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d5828d9015d58ba3b900000&ISNOLOSS=1',
+        isRefresh: true
+      }
     };
   },
   methods: {

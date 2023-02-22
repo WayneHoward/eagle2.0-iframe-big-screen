@@ -154,14 +154,16 @@ export function getLine1 () {
         type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
       },
       formatter: function (params) {
-        let returnData = '<div style="padding: 2px 10px;">'
-        returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;">线损率区间：' + params[0].axisValue + '</span><br/>'
-        for (let i = 0; i < 2; i++) {
-            returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
-            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">%</span><br/>'
+        if (params.length > 1) {
+          let returnData = '<div style="padding: 2px 10px;">'
+          returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;">线损率区间：' + params[0].axisValue + '</span><br/>'
+          for (let i = 0; i < 2; i++) {
+              returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
+              returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">%</span><br/>'
+          }
+          returnData += '</div>'
+          return returnData
         }
-        returnData += '</div>'
-        return returnData
       }
     },
     grid: {
