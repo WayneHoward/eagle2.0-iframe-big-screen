@@ -65,7 +65,7 @@ export default {
         formData: this.formData,
         tabId: '4028801b5d52bb79015d54e49d2202b2',
         tabName: '无功优化策略结果表',
-        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d53022d015d54a6833e0070',
+        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d53022d015d54a6833e0070',
         isRefresh: true
       }
     };

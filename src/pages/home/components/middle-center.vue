@@ -48,7 +48,7 @@ export default {
         formData: this.formData,
         tabId: '4028b8815d5f0e1d015d5fc0180b000d',
         tabName: '分压结果对比表',
-        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d5828d9015d58ba96a5001d',
+        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d5828d9015d58ba96a5001d',
         isRefresh: true
       }
     };

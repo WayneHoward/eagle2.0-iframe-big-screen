@@ -74,7 +74,7 @@ export default {
         formData: this.formData,
         tabId: '4028b8815d5f0e1d015d5fbebd790005',
         tabName: '全网总损耗结果对比表（日）',
-        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d5828d9015d58ba3b900000&ISNOLOSS=1',
+        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d5828d9015d58ba3b900000&ISNOLOSS=1',
         isRefresh: true
       }
     };

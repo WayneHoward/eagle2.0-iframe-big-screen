@@ -45,7 +45,7 @@ export default {
         formData: this.formData,
         tabId: '4028801b5d52bb79015d5477c51201d6',
         tabName: '电压合格率结果对比表（整点）',
-        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d100f53015d11e73b85004c',
+        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d100f53015d11e73b85004c',
         isRefresh: true
       }
     };

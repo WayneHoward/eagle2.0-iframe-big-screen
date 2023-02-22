@@ -45,7 +45,7 @@ export default {
         formData: this.formData,
         tabId: '4028801b5d52bb79015d54766623018d',
         tabName: '输电线路结果对比表（整点）',
-        url: 'eagle2HummerRootPath+hummer/report.action?queryId=4028801b5d0cacfe015d0d98e573001d',
+        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d0cacfe015d0d98e573001d',
         isRefresh: true
       }
     };
