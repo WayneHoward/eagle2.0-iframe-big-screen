@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="线路运行情况对比" ref="title" :params="params"></Title>
+    <Title titleName="线路运行情况对比" ref="title"></Title>
     <div class="echarts">
       <df-charts
         ref="bar"
@@ -38,18 +38,16 @@ export default {
   data() {
     return {
       before: [],
-      after: [],
-
-      params: {
-        hour: true,
-        formData: this.formData,
-        tabId: '4028801b5d52bb79015d54766623018d',
-        tabName: '输电线路结果对比表（整点）',
-        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d0cacfe015d0d98e573001d',
-        isRefresh: true
-      }
+      after: []
     };
   },
+
+  mounted() {
+    const bar = this.$refs.bar.getInstance()
+    bar.off('click')// 清除事件
+    bar.on('click', (param) => {this.showInTab()});
+  },
+
   methods: {
     loadData(data) {
       this.before = []
@@ -67,6 +65,20 @@ export default {
           }
         })
       }
+    },
+
+    showInTab() {
+      let COMPANY_ID = this.formData.companyId
+      let DATA_TIME = this.formData.dataTime
+
+      let param = {
+        tabId: '4028801b5d52bb79015d54766623018d',
+        tabName: '输电线路结果对比表（整点）',
+        url: `http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d0cacfe015d0d98e573001d&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME} 00:00&END_DATA_TIME=${DATA_TIME} 23:59`,
+        isRefresh: true
+      }
+
+      top.showInTab(param.tabId, param.tabName, param.url, param.isRefresh)
     }
   }
 };

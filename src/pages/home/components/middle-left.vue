@@ -74,6 +74,17 @@ export default {
       LOADRATE_AFTER: [] // 负载率优化后
     };
   },
+
+  mounted() {
+    const tab1Bar = this.$refs.tab1Bar.getInstance()
+    tab1Bar.off('click')// 清除事件
+    tab1Bar.on('click', (param) => {this.showInTab()});
+
+    const tab2Bar = this.$refs.tab2Bar.getInstance()
+    tab2Bar.off('click')// 清除事件
+    tab2Bar.on('click', (param) => {this.showInTab()});
+  },
+
   methods: {
     loadData(data) {
       if (typeof data != 'string' && data.length > 0) {
@@ -102,6 +113,20 @@ export default {
 
     tabClick(value) {
       this.tabValue = value
+    },
+
+    showInTab() {
+      let COMPANY_ID = this.formData.companyId
+      let DATA_TIME = this.formData.dataTime
+
+      let param = {
+        tabId: '4028801b5d52bb79015d54680b760162',
+        tabName: '变压器结果对比表（整点）',
+        url: `http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d0cacfe015d0d8c14360000&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME} 00:00&END_DATA_TIME=${DATA_TIME} 23:59`,
+        isRefresh: true
+      }
+
+      top.showInTab(param.tabId, param.tabName, param.url, param.isRefresh)
     }
   }
 };

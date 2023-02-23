@@ -1,9 +1,9 @@
 <template>
   <div class="content">
-    <Title titleName="输电网基本情况" ref="title" :params="params"></Title>
+    <Title titleName="输电网基本情况" ref="title"></Title>
     <div class="ul-wrapper">
       <ul class="block">
-        <li>
+        <li @click="showInTab">
           <div class="icon">
             <img src="../assets/06.png" alt="">
           </div>
@@ -16,7 +16,7 @@
             <div class="company">万kWh</div>
           </div>
         </li>
-        <li>
+        <li @click="showInTab">
           <div class="icon">
             <img src="../assets/07.png" alt="">
           </div>
@@ -29,7 +29,7 @@
             <div class="company">万kWh</div>
           </div>
         </li>
-        <li>
+        <li @click="showInTab">
           <div class="icon">
             <img src="../assets/08.png" alt="">
           </div>
@@ -67,16 +67,7 @@ export default {
 
       TOTALLOSSBEFORE: '0', // 总损耗
 
-      TOTALLOSSRATEBEFORE: '0', // 线损率
-
-      params: {
-        hour: false,
-        formData: this.formData,
-        tabId: '4028b8815d5f0e1d015d5fbebd790005',
-        tabName: '全网总损耗结果对比表（日）',
-        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d5828d9015d58ba3b900000&ISNOLOSS=1',
-        isRefresh: true
-      }
+      TOTALLOSSRATEBEFORE: '0' // 线损率
     };
   },
   methods: {
@@ -84,6 +75,20 @@ export default {
       this.ACTIVEPOWERBEFORE = data && data.ACTIVEPOWERBEFORE ? data.ACTIVEPOWERBEFORE : '0'
       this.TOTALLOSSBEFORE = data && data.TOTALLOSSBEFORE ? data.TOTALLOSSBEFORE : '0'
       this.TOTALLOSSRATEBEFORE = data && data.TOTALLOSSRATEBEFORE ? data.TOTALLOSSRATEBEFORE : '0'
+    },
+
+    showInTab() {
+      let COMPANY_ID = this.formData.companyId
+      let DATA_TIME = this.formData.dataTime
+
+      let param = {
+        tabId: '4028b8815d5f0e1d015d5fbebd790005',
+        tabName: '全网总损耗结果对比表（日）',
+        url: `http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d5828d9015d58ba3b900000&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME}&END_DATA_TIME=${DATA_TIME}&ISNOLOSS=1`,
+        isRefresh: true
+      }
+
+      top.showInTab(param.tabId, param.tabName, param.url, param.isRefresh)
     }
   }
 };
@@ -111,6 +116,7 @@ export default {
   // background-color: #f8fafa;
   border-radius: 10px;
   li {
+    cursor: pointer;
     height: 100%;
     width: 33%;
     display: flex;

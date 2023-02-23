@@ -146,7 +146,7 @@ export function getBar1 () {
 // 纯折线图
 export function getLine1 () {
   const option = { // 配置图表信息
-    color: ['#13afa0', '#ff9e32'],
+    color: ['#ff9e32', '#13afa0'],
     backgroundColor: '#fff',
     tooltip: {
       trigger: 'axis',
@@ -186,7 +186,7 @@ export function getLine1 () {
     },
     xAxis: {
       type: 'category',
-      data: ['330kV', '110kV', '350kV'],
+      data: ['330kV', '110kV', '35kV'],
       axisLine: {
         lineStyle: {
           color: '#CCCCCC',

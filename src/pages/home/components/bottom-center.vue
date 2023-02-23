@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="电压合格率对比" ref="title" :params="params"></Title>
+    <Title titleName="电压合格率对比" ref="title"></Title>
     <div class="echarts">
       <df-charts
         ref="line"
@@ -38,18 +38,16 @@ export default {
   data() {
     return {
       before: [],
-      after: [],
-
-      params: {
-        hour: true,
-        formData: this.formData,
-        tabId: '4028801b5d52bb79015d5477c51201d6',
-        tabName: '电压合格率结果对比表（整点）',
-        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d100f53015d11e73b85004c',
-        isRefresh: true
-      }
+      after: []
     };
   },
+
+  mounted() {
+    const line = this.$refs.line.getInstance()
+    line.off('click')// 清除事件
+    line.on('click', (param) => {this.showInTab()});
+  },
+
   methods: {
     loadData(data) {
       this.before = []
@@ -77,6 +75,20 @@ export default {
         this.before = [arr330.STANDARD_RATE_BEFORE, arr110.STANDARD_RATE_BEFORE, arr35.STANDARD_RATE_BEFORE]
         this.after = [arr330.STANDARD_RATE, arr110.STANDARD_RATE, arr35.STANDARD_RATE]
       }
+    },
+
+    showInTab() {
+      let COMPANY_ID = this.formData.companyId
+      let DATA_TIME = this.formData.dataTime
+
+      let param = {
+        tabId: '4028801b5d52bb79015d5477c51201d6',
+        tabName: '电压合格率结果对比表（整点）',
+        url: `http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d100f53015d11e73b85004c&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME} 00:00&END_DATA_TIME=${DATA_TIME} 23:59`,
+        isRefresh: true
+      }
+
+      top.showInTab(param.tabId, param.tabName, param.url, param.isRefresh)
     }
   }
 };

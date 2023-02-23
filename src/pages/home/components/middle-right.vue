@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Title titleName="近7日全网线损率对比" ref="title" :params="params"></Title>
+    <Title titleName="近7日全网线损率对比" ref="title"></Title>
     <div class="echarts">
       <df-charts
         ref="lineBar"
@@ -35,9 +35,7 @@ export default {
 
       ACTIVE_POWER: [], // 供电量
       TOTAL_LOSS_RATE_BEFORE: [], // 优化前线损率
-      TOTAL_LOSS_RATE: [], // 优化后线损率
-
-      params: {}
+      TOTAL_LOSS_RATE: [] // 优化后线损率
     };
   },
   methods: {
@@ -70,9 +68,6 @@ export default {
   .echarts {
     flex: 1;
     overflow: hidden;
-  }
-  ::v-deep .title-name {
-    cursor: default;
   }
 }
 </style>

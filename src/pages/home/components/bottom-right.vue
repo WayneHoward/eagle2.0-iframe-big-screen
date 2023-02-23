@@ -2,7 +2,7 @@
   <div class="content">
     <div class="title">
       <img src="../assets/title-icon.png" alt="title-icon">
-      <div class="title-name" @click="showInTab">
+      <div class="title-name">
         无功补偿装置容量对比
       </div>
       <ul class="tabs">
@@ -96,6 +96,19 @@ export default {
       tab3LeftData: [],
       tab3RightData: []
     };
+  },
+  mounted() {
+    const tab1DoubleBar = this.$refs.tab1DoubleBar.getInstance()
+    tab1DoubleBar.off('click')// 清除事件
+    tab1DoubleBar.on('click', (param) => {this.showInTab()});
+
+    const tab2DoubleBar = this.$refs.tab2DoubleBar.getInstance()
+    tab2DoubleBar.off('click')// 清除事件
+    tab2DoubleBar.on('click', (param) => {this.showInTab()});
+
+    const tab3DoubleBar = this.$refs.tab3DoubleBar.getInstance()
+    tab3DoubleBar.off('click')// 清除事件
+    tab3DoubleBar.on('click', (param) => {this.showInTab()});
   },
   methods: {
     loadData(data) {
@@ -233,7 +246,6 @@ export default {
       height: 16px;
     }
     .title-name {
-      cursor: pointer;
       color: #20253A;
       font-size: 14px;
       margin-left: 5px;

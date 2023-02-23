@@ -1,9 +1,9 @@
 <template>
   <div class="content">
-    <Title titleName="输电网优化措施" ref="title" :params="params"></Title>
+    <Title titleName="输电网优化措施" ref="title"></Title>
     <div class="ul-wrapper">
       <ul class="block">
-        <li>
+        <li @click="showInTab">
           <div class="icon">
             <img src="../assets/09.png" alt="">
           </div>
@@ -13,7 +13,7 @@
             <div class="company">台</div>
           </div>
         </li>
-        <li>
+        <li @click="showInTab">
           <div class="icon">
             <img src="../assets/10.png" alt="">
           </div>
@@ -23,7 +23,7 @@
             <div class="company">万kWh</div>
           </div>
         </li>
-        <li>
+        <li @click="showInTab">
           <div class="icon">
             <img src="../assets/011.png" alt="">
           </div>
@@ -58,16 +58,7 @@ export default {
 
       YEARTOTALSAVED: '0', // 年节电量
 
-      CO2REDUCTION: '0', // CO2减排量
-
-      params: {
-        hour: false,
-        formData: this.formData,
-        tabId: '4028801b5d52bb79015d54e49d2202b2',
-        tabName: '无功优化策略结果表',
-        url: 'http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d53022d015d54a6833e0070',
-        isRefresh: true
-      }
+      CO2REDUCTION: '0' // CO2减排量
     };
   },
   methods: {
@@ -75,6 +66,20 @@ export default {
       this.RPOPSRNUM = data && data.RPOPSRNUM ? data.RPOPSRNUM : '0'
       this.YEARTOTALSAVED = data && data.YEARTOTALSAVED ? data.YEARTOTALSAVED : '0'
       this.CO2REDUCTION = data && data.CO2REDUCTION ? data.CO2REDUCTION : '0'
+    },
+
+    showInTab() {
+      let COMPANY_ID = this.formData.companyId
+      let DATA_TIME = this.formData.dataTime
+
+      let param = {
+        tabId: '4028801b5d52bb79015d54e49d2202b2',
+        tabName: '无功优化策略结果表',
+        url: `http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d53022d015d54a6833e0070&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME}&END_DATA_TIME=${DATA_TIME}`,
+        isRefresh: true
+      }
+
+      top.showInTab(param.tabId, param.tabName, param.url, param.isRefresh)
     }
   }
 };
@@ -102,6 +107,7 @@ export default {
   // background-color: #f8fafa;
   border-radius: 10px;
   li {
+    cursor: pointer;
     height: 100%;
     width: 33%;
     display: flex;

@@ -467,7 +467,7 @@ export function getLineBar1 () {
 // 折线柱状图
 export function getLineBar2 () {
   const option = { // 配置图表信息
-    color: ['#13afa0', '#13afa0', '#ff9e32'],
+    color: ['#13afa0', '#ff9e32', '#13afa0'],
     backgroundColor: '#fff',
     tooltip: {
       trigger: 'axis',
