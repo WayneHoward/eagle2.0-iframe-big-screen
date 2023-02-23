@@ -43,6 +43,12 @@ import { getBar1, getBar2 } from './middle-config'
 
 export default {
   name: 'MiddleLeft',
+  props: {
+    formData: {
+      type: Object,
+      default: () => {}
+    }
+  },
   components: {
     dfCharts
   },
@@ -125,6 +131,7 @@ export default {
         url: `http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d0cacfe015d0d8c14360000&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME} 00:00&END_DATA_TIME=${DATA_TIME} 23:59`,
         isRefresh: true
       }
+      console.log(param);
 
       top.showInTab(param.tabId, param.tabName, param.url, param.isRefresh)
     }
