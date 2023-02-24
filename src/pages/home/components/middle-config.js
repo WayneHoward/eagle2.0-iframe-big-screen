@@ -291,9 +291,13 @@ export function getLineBar1 () {
       formatter: function (params) {
         let returnData = '<div style="padding: 2px 10px;">'
         returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;"> 电压等级：' + params[0].axisValue + '</span><br/>'
-        for (let i = 0; i < params.length; i++) {
+        for (let i = 0; i < 2; i++) {
             returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
-            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;"></span><br/>'
+            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">MWh</span><br/>'
+        }
+        for (let i = 2; i < 4; i++) {
+          returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
+          returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">%</span><br/>'
         }
         returnData += '</div>'
         return returnData
@@ -477,9 +481,13 @@ export function getLineBar2 () {
       formatter: function (params) {
         let returnData = '<div style="padding: 2px 10px;">'
         returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;">' + params[0].axisValue + '</span><br/>'
-        for (let i = 0; i < params.length; i++) {
+        for (let i = 0; i < 1; i++) {
             returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
-            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;"></span><br/>'
+            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">MWh</span><br/>'
+        }
+        for (let i = 1; i < 3; i++) {
+            returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
+            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">%</span><br/>'
         }
         returnData += '</div>'
         return returnData
@@ -506,6 +514,7 @@ export function getLineBar2 () {
     xAxis: {
       type: 'category',
       data: this.dateTimeList,
+      // data: ['2022-01-01', '2022-01-02', '2022-01-03', '2022-01-04', '2022-01-05', '2022-01-06', '2022-01-07'],
       axisLine: {
         lineStyle: {
           color: '#CCCCCC',
