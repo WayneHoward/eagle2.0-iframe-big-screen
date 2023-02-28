@@ -84,7 +84,7 @@ export default {
       let param = {
         tabId: '4028b8815d5f0e1d015d5fbebd790005',
         tabName: '全网总损耗结果对比表（日）',
-        url: `http://192.168.0.26:18080/hummer/report.action?queryId=4028801b5d5828d9015d58ba3b900000&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME}&END_DATA_TIME=${DATA_TIME}&ISNOLOSS=1`,
+        url: `${window.eagle2HummerRootPath}/hummer/report.action?queryId=4028801b5d5828d9015d58ba3b900000&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME}&END_DATA_TIME=${DATA_TIME}&ISNOLOSS=1`,
         isRefresh: true
       }
 

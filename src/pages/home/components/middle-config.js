@@ -627,7 +627,7 @@ export function getLineBar2 () {
       {
         name: '供电量',
         type: 'bar',
-        barWidth: '5%',
+        barWidth: '10%',
         yAxisIndex: 0,
         // data: [1200, 1100, 700, 600, 1500, 2000, 1500, 1000]
         data: this.ACTIVE_POWER

@@ -156,7 +156,7 @@ export function getLine1 () {
       formatter: function (params) {
         if (params.length > 1) {
           let returnData = '<div style="padding: 2px 10px;">'
-          returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;">线损率区间：' + params[0].axisValue + '</span><br/>'
+          returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;">电压等级：' + params[0].axisValue + '</span><br/>'
           for (let i = 0; i < 2; i++) {
               returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
               returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;">%</span><br/>'
@@ -349,7 +349,7 @@ export function getDoubleBar(leftData, rightData, company) {
         returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff;">' + params[0].axisValue + '</span><br/>'
         for (let i = 0; i < params.length; i++) {
             returnData += '<span style="display:inline-block; width:10px; height:8px; margin-right:5px; border-radius:1px; background-color:' + params[i].color + '"></span>'
-            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + (params[i] && (params[i].value)) + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;"></span><br/>'
+            returnData += '<span style="font-family: MicrosoftYaHei; font-size: 14px; color: #fff; ">' + params[i].seriesName + '：</span><span style="font-family: Verdana; font-size: 12px; color: ' + params[i].color + '">' + ((params[i] && params[i].value) ? params[i].value : '0') + '</span><span style="display:inline-block; margin-left: 4px; line-height: 10px; font-family: MicrosoftYaHei; font-size: 12px; color: #fff;"></span><br/>'
         }
         returnData += '</div>'
         return returnData
