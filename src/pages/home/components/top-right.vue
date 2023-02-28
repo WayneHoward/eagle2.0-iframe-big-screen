@@ -75,7 +75,7 @@ export default {
       let param = {
         tabId: '4028801b5d52bb79015d54e49d2202b2',
         tabName: '无功优化策略结果表',
-        url: `${window.eagle2HummerRootPath}/hummer/report.action?queryId=4028801b5d53022d015d54a6833e0070&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME}&END_DATA_TIME=${DATA_TIME}`,
+        url: `${window.eagle2HummerRootPath}/report.action?queryId=4028801b5d53022d015d54a6833e0070&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME}&END_DATA_TIME=${DATA_TIME}`,
         isRefresh: true
       }
 

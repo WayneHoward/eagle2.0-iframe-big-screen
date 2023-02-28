@@ -84,7 +84,7 @@ export default {
       let param = {
         tabId: '4028801b5d52bb79015d5477c51201d6',
         tabName: '电压合格率结果对比表（整点）',
-        url: `${window.eagle2HummerRootPath}/hummer/report.action?queryId=4028801b5d100f53015d11e73b85004c&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME} 00:00&END_DATA_TIME=${DATA_TIME} 23:59`,
+        url: `${window.eagle2HummerRootPath}/report.action?queryId=4028801b5d100f53015d11e73b85004c&COMPANY_ID=${COMPANY_ID}&BEGIN_DATA_TIME=${DATA_TIME} 00:00&END_DATA_TIME=${DATA_TIME} 23:59`,
         isRefresh: true
       }
 
